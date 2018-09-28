@@ -11,7 +11,7 @@
 		<properties>
 			<property name="hibernate.dialect"
 				value="org.hibernate.dialect.MySQL5InnoDBDialect" />
-			<property name="hibernate.hbm2ddl.auto" value="create" />
+			<property name="hibernate.hbm2ddl.auto" value="create" /><!-- "none" --> 
 			<!-- si  hbm2ddl.auto vaut "create" alors les tables seront automatiquement
 			     créées dans la base de données en fonction des paramétrages java 
 			     et le fichier import.sql (avec INSERT INTO) sera automatiquement déclenché -->
