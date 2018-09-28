@@ -13,7 +13,7 @@ import fr.afcepf.al32.entity.Personne;
 
 //@Component("id_bizarre_du_composant") 
 //id par defaut = nom de la classe java avec la premiere lettre en minuscule.
-@Component //demander à spring de prendre en charge cette classe
+//@Component //demander à spring de prendre en charge cette classe
            //en tant que "composant spring"
 public class PersonneDaoSimulation implements IPersonneDao {
 	

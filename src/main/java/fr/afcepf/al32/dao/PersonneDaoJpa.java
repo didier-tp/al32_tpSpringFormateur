@@ -2,7 +2,11 @@ package fr.afcepf.al32.dao;
 
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import fr.afcepf.al32.entity.Personne;
 
@@ -10,34 +14,34 @@ import fr.afcepf.al32.entity.Personne;
  * implémentation avec technologie JPA/Hibernate 
  * (autre implémentation possible PersonneDaoJdbc (Statement, ResultSet )
  */
-//@Component
+@Component
+@Transactional //idealement en version Spring
 public class PersonneDaoJpa implements IPersonneDao {
-
-	public PersonneDaoJpa() {
-		// TODO Auto-generated constructor stub
-	}
+	@PersistenceContext
+	private EntityManager entityManager;
 
 	@Override
 	public Personne findOne(Long numero) {
-		// TODO Auto-generated method stub
-		return null;
+		return entityManager.find(Personne.class, numero);
 	}
 
 	@Override
 	public void save(Personne p) {
-		// TODO Auto-generated method stub
-
+		if(p.getNumero()==null)
+			entityManager.persist(p);//INSERT INTO ...
+		else 
+			entityManager.merge(p); //UPDATE SQL
 	}
 
 	@Override
 	public void delete(Long numero) {
-		// TODO Auto-generated method stub
-
+		Personne p = entityManager.find(Personne.class, numero);
+		entityManager.remove(p);
 	}
 
 	@Override
 	public List<Personne> findAll() {
-		// TODO Auto-generated method stub
+		// ...
 		return null;
 	}
 
