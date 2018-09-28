@@ -52,6 +52,21 @@
 	    <artifactId>spring-test</artifactId>
 	    <version>5.1.0.RELEASE</version>
 	</dependency>
+	
+	<!-- orm= object relational mapping = technologies comme hibernate/jpa  -->	
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-orm</artifactId>
+	    <version>5.1.0.RELEASE</version>
+	</dependency>
+	
+	<!-- le hibernate-core comporte maintenant (version récente) la partie JPA -->
+	<dependency>
+	    <groupId>org.hibernate</groupId>
+	    <artifactId>hibernate-core</artifactId>
+	    <version>5.3.6.Final</version>
+	</dependency>
+	
   
   </dependencies>
   

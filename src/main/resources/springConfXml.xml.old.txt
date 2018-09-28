@@ -13,21 +13,18 @@ http://www.springframework.org/schema/tx/spring-tx.xsd
 http://www.springframework.org/schema/context
 http://www.springframework.org/schema/context/spring-context.xsd" >
 
-<!-- 
-<tx:annotation-driven transaction-manager="txManager" />
--->
-
-<bean id="myDataSource"
-class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-	<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-	<property name="url" value="jdbc:mysql://localhost/minibankdb" />
-	<property name="username" value="root" />
-	<property name="password" value="root" />
+<bean id="personneDaoSimulation" 
+      class="fr.afcepf.al32.dao.PersonneDaoSimulation">
+	<property name="commentaire" value="valeur qui va bien" />
 </bean>
 
+<bean id="servicePersonneImpl" 
+      class="fr.afcepf.al32.service.ServicePersonneImpl">
+	<property name="personneDao" ref="personneDaoSimulation" />
+</bean>
+<!-- 
+<tx:annotation-driven transaction-manager="txManager" />
 <context:annotation-config/>
-
-<context:component-scan base-package="fr.afcepf.al32"></context:component-scan>
-
+-->
 
 </beans>
