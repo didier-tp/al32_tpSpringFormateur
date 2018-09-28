@@ -1,0 +1,9 @@
+2018-09-28 09:48:12 - p=Personne(numero=2, prenom=alain, nom=Therieur, email=at@gmail.com)
+2018-09-28 09:53:31 - p=Personne(numero=2, prenom=alain, nom=Therieur, email=at@gmail.com)
+2018-09-28 09:59:08 - p=Personne(numero=2, prenom=alain, nom=Therieur, email=at@gmail.com)
+2018-09-28 10:07:32 - constructeur de ServicePersonneImpl appelé avant injections  avec personneDao=null
+2018-09-28 10:07:32 - initBean() appelée après injection avec @PostConstruct  avec personneDao=fr.afcepf.al32.dao.PersonneDaoSimulation@79924b
+2018-09-28 10:07:32 - p=Personne(numero=2, prenom=alain, nom=Therieur, email=at@gmail.com)
+2018-09-28 10:24:34 - constructeur de ServicePersonneImpl appelé avant injections  avec personneDao=null
+2018-09-28 10:24:34 - initBean() appelée après injection avec @PostConstruct  avec personneDao=fr.afcepf.al32.dao.PersonneDaoSimulation@6a6cb05c
+2018-09-28 10:24:34 - p=Personne(numero=2, prenom=alain, nom=Therieur, email=at@gmail.com)
