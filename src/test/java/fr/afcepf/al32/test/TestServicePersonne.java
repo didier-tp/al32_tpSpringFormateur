@@ -10,6 +10,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import fr.afcepf.al32.config.ServiceConfig;
+import fr.afcepf.al32.entity.Client;
+import fr.afcepf.al32.entity.Compte;
 import fr.afcepf.al32.entity.Personne;
 import fr.afcepf.al32.service.IServicePersonne;
 
@@ -26,9 +28,19 @@ public class TestServicePersonne {
 	
 	@Test
 	public void testRechercheParNum() {
-		Personne p =servicePersonne.rechercherPersonneParNumero(3L);
-		Assert.assertTrue(p.getNumero()==3L);
+		Personne p =servicePersonne.rechercherPersonneParNumero(2L);
+		Assert.assertTrue(p.getNumero()==2L);
 		logger.debug("p="+p.toString());
+	}
+	
+	@Test
+	public void testRechercheClientAvecCompteParNum() {
+		Client cli =servicePersonne.rechercherClientAvecComptes(3L);
+		Assert.assertTrue(cli.getNumero()==3L);
+		logger.debug("cli="+cli.toString());
+			for(Compte cpt : cli.getComptes()) {
+				logger.debug("\t"+cpt.toString());//sans "lazy exception" ?
+			}
 	}
 	
 

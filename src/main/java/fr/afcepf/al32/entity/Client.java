@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 
 import lombok.Getter;
@@ -17,7 +18,7 @@ public class Client extends Personne{
 	private String password;
 	
 	//Le @OneToMany est l'inverse du @ManyToOne
-	@OneToMany(mappedBy="client")//mappedBy = nom "java" de la relation inverse 
+	@OneToMany(mappedBy="client",fetch=FetchType.LAZY)//mappedBy = nom "java" de la relation inverse 
 	private List<Compte> comptes;
 
 }

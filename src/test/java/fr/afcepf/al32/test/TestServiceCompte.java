@@ -31,6 +31,7 @@ public class TestServiceCompte {
 		Compte c =serviceCompte.rechercherCompteParNumero(2L);
 		Assert.assertTrue(c.getNumero()==2L);
 		logger.debug("c="+c.toString());
+		logger.debug("client-c:" + c.getClient().toString());
 	}
 	
 	@Test

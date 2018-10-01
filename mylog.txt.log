@@ -76,3 +76,38 @@
 2018-10-01 14:23:38 - constructeur de ServicePersonneImpl appelé avant injections  avec personneDao=null
 2018-10-01 14:23:38 - initBean() appelée après injection avec @PostConstruct  avec personneDao=fr.afcepf.al32.dao.PersonneDaoJpa@6c15e8c7
 2018-10-01 14:23:39 - p=Personne(numero=3, prenom=jean, nom=Bon, email=jb@gmail.com)
+2018-10-01 14:40:47 - constructeur de ServicePersonneImpl appelé avant injections  avec personneDao=null
+2018-10-01 14:40:47 - initBean() appelée après injection avec @PostConstruct  avec personneDao=fr.afcepf.al32.dao.PersonneDaoJpa@188cbcde
+2018-10-01 14:40:47 - *** c=Compte(numero=1, client=Personne(numero=3, prenom=jean, nom=Bon, email=jb@gmail.com), label=compte 1, solde=50.0)
+2018-10-01 14:40:47 - *** c=Compte(numero=2, client=Personne(numero=3, prenom=jean, nom=Bon, email=jb@gmail.com), label=compte 2, solde=70.0)
+2018-10-01 14:40:47 - c=Compte(numero=2, client=Personne(numero=3, prenom=jean, nom=Bon, email=jb@gmail.com), label=compte 2, solde=70.0)
+2018-10-01 14:40:47 - pk=3
+2018-10-01 14:40:47 - compteRelu=Compte(numero=3, client=null, label=label xyz, solde=400.0)
+2018-10-01 14:42:06 - constructeur de ServicePersonneImpl appelé avant injections  avec personneDao=null
+2018-10-01 14:42:06 - initBean() appelée après injection avec @PostConstruct  avec personneDao=fr.afcepf.al32.dao.PersonneDaoJpa@109a2025
+2018-10-01 14:42:07 - *** c=Compte(numero=1, client=Personne(numero=3, prenom=jean, nom=Bon, email=jb@gmail.com), label=compte 1, solde=50.0)
+2018-10-01 14:42:07 - *** c=Compte(numero=2, client=Personne(numero=3, prenom=jean, nom=Bon, email=jb@gmail.com), label=compte 2, solde=70.0)
+2018-10-01 14:42:07 - c=Compte(numero=2, client=Personne(numero=3, prenom=jean, nom=Bon, email=jb@gmail.com), label=compte 2, solde=70.0)
+2018-10-01 14:42:07 - client-c:Personne(numero=3, prenom=jean, nom=Bon, email=jb@gmail.com)
+2018-10-01 14:42:07 - pk=3
+2018-10-01 14:42:07 - compteRelu=Compte(numero=3, client=null, label=label xyz, solde=400.0)
+2018-10-01 14:47:56 - constructeur de ServicePersonneImpl appelé avant injections  avec personneDao=null
+2018-10-01 14:47:56 - initBean() appelée après injection avec @PostConstruct  avec personneDao=fr.afcepf.al32.dao.PersonneDaoJpa@109a2025
+2018-10-01 14:47:56 - p=Personne(numero=3, prenom=jean, nom=Bon, email=jb@gmail.com)
+2018-10-01 14:50:56 - constructeur de ServicePersonneImpl appelé avant injections  avec personneDao=null
+2018-10-01 14:50:56 - initBean() appelée après injection avec @PostConstruct  avec personneDao=fr.afcepf.al32.dao.PersonneDaoJpa@109a2025
+2018-10-01 14:50:56 - p=Personne(numero=3, prenom=jean, nom=Bon, email=jb@gmail.com)
+2018-10-01 14:53:38 - constructeur de ServicePersonneImpl appelé avant injections  avec personneDao=null
+2018-10-01 14:53:38 - initBean() appelée après injection avec @PostConstruct  avec personneDao=fr.afcepf.al32.dao.PersonneDaoJpa@cf518cf
+2018-10-01 14:53:38 - p=Personne(numero=3, prenom=jean, nom=Bon, email=jb@gmail.com)
+2018-10-01 14:53:38 - 	Compte(numero=1, client=Personne(numero=3, prenom=jean, nom=Bon, email=jb@gmail.com), label=compte 1, solde=50.0)
+2018-10-01 14:53:38 - 	Compte(numero=2, client=Personne(numero=3, prenom=jean, nom=Bon, email=jb@gmail.com), label=compte 2, solde=70.0)
+2018-10-01 15:02:12 - constructeur de ServicePersonneImpl appelé avant injections  avec personneDao=null
+2018-10-01 15:02:12 - initBean() appelée après injection avec @PostConstruct  avec personneDao=fr.afcepf.al32.dao.PersonneDaoJpa@109a2025
+2018-10-01 15:02:12 - p=Personne(numero=3, prenom=jean, nom=Bon, email=jb@gmail.com)
+2018-10-01 15:25:54 - constructeur de ServicePersonneImpl appelé avant injections  avec personneDao=null
+2018-10-01 15:25:54 - initBean() appelée après injection avec @PostConstruct  avec personneDao=fr.afcepf.al32.dao.PersonneDaoJpa@6c9320c2
+2018-10-01 15:25:54 - cli=Personne(numero=3, prenom=jean, nom=Bon, email=jb@gmail.com)
+2018-10-01 15:25:54 - 	Compte(numero=1, client=Personne(numero=3, prenom=jean, nom=Bon, email=jb@gmail.com), label=compte 1, solde=50.0)
+2018-10-01 15:25:54 - 	Compte(numero=2, client=Personne(numero=3, prenom=jean, nom=Bon, email=jb@gmail.com), label=compte 2, solde=70.0)
+2018-10-01 15:25:54 - p=Personne(numero=2, prenom=alain, nom=Therieur, email=at@gmail.com)

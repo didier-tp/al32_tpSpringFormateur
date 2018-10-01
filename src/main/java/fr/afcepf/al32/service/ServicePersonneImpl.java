@@ -7,7 +7,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import fr.afcepf.al32.dao.IClientDao;
 import fr.afcepf.al32.dao.IPersonneDao;
+import fr.afcepf.al32.entity.Client;
 import fr.afcepf.al32.entity.Personne;
 
 @Component //ou bien @Service qui herite de @Component
@@ -18,6 +20,14 @@ public class ServicePersonneImpl implements IServicePersonne {
 	//@Autowired demande à spring d'initialiser la référence "personneDao"
 	//en pointant vers un composant spring existant compatible avec l'interface.
 	private IPersonneDao personneDao=null;
+	
+	@Autowired	
+	private IClientDao clientDao=null;
+	
+	@Override
+	public Client rechercherClientAvecComptes(Long numClient) {
+		return clientDao.rechercherClientAvecComptes(numClient);
+	}
 	
 	//pour injection de dépendance xml:
 	public void setPersonneDao(IPersonneDao personneDao) {
@@ -45,5 +55,7 @@ public class ServicePersonneImpl implements IServicePersonne {
 		//V2 utilisant dao injecté par spring:
 		return personneDao.findOne(num);
 	}
+
+	
 
 }
