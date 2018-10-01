@@ -1,6 +1,7 @@
 package fr.afcepf.al32.service;
 
 import javax.annotation.PostConstruct;
+import javax.transaction.Transactional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,6 +14,7 @@ import fr.afcepf.al32.entity.Client;
 import fr.afcepf.al32.entity.Personne;
 
 @Component //ou bien @Service qui herite de @Component
+@Transactional
 public class ServicePersonneImpl implements IServicePersonne {
 	private Logger logger = LoggerFactory.getLogger(ServicePersonneImpl.class);
 	
@@ -26,7 +28,18 @@ public class ServicePersonneImpl implements IServicePersonne {
 	
 	@Override
 	public Client rechercherClientAvecComptes(Long numClient) {
+		//solution 1 (conseillée) : déléguer au dao
+		//     une méthode de recherche spécifique avec mot clef FETCH dans la query
 		return clientDao.rechercherClientAvecComptes(numClient);
+		/*
+		//solution 2 (bidouille qui fonctionne):
+		Client c = (Client) personneDao.findOne(numClient);
+		c.getComptes().size(); //appeler .size() sur collection en mode lazy
+		                       //dans une méthode @Transactional
+		                       //force hibernate/jpa à tout de suite remonter les valeurs
+		                       //en mémoire ==> plus de Lazy execption coté test ou web
+		return c;
+		*/
 	}
 	
 	//pour injection de dépendance xml:
