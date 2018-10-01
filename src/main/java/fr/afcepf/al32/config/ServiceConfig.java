@@ -1,5 +1,7 @@
 package fr.afcepf.al32.config;
 
+import java.util.Properties;
+
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
@@ -28,6 +30,7 @@ public class ServiceConfig {
 		HibernateJpaVendorAdapter hibernateJpaVendorAdapter = new HibernateJpaVendorAdapter();
 		hibernateJpaVendorAdapter.setShowSql(false);
 		//hibernateJpaVendorAdapter.setGenerateDdl(false);
+		//hibernateJpaVendorAdapter.setGenerateDdl(true);
 		hibernateJpaVendorAdapter.setDatabase(Database.MYSQL);
 		// hibernateJpaVendorAdapter.setDatabase(Database.HSQL);
 		return hibernateJpaVendorAdapter;
@@ -40,6 +43,10 @@ public class ServiceConfig {
 		factory.setJpaVendorAdapter(jpaVendorAdapter);
 		factory.setPackagesToScan("fr.afcepf.al32.entity");
 		factory.setDataSource(dataSource);
+		Properties jpaProperties = new Properties();
+		jpaProperties.put("hibernate.hbm2ddl.auto", "create");
+		jpaProperties.put("hibernate.dialect", "org.hibernate.dialect.MySQL5InnoDBDialect");
+		factory.setJpaProperties(jpaProperties);
 		factory.afterPropertiesSet();
 		return factory.getObject();
 	}
