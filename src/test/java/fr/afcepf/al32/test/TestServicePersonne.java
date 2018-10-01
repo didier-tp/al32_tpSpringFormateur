@@ -26,8 +26,8 @@ public class TestServicePersonne {
 	
 	@Test
 	public void testRechercheParNum() {
-		Personne p =servicePersonne.rechercherPersonneParNumero(2L);
-		Assert.assertTrue(p.getNumero()==2L);
+		Personne p =servicePersonne.rechercherPersonneParNumero(3L);
+		Assert.assertTrue(p.getNumero()==3L);
 		logger.debug("p="+p.toString());
 	}
 	
