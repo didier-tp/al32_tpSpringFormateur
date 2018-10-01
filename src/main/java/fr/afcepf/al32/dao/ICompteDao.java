@@ -1,6 +1,8 @@
 package fr.afcepf.al32.dao;
 
-import fr.afcepf.al32.entity.Personne;
+import java.util.List;
+
+import fr.afcepf.al32.entity.Compte;
 
 /*
  * DAO = Data Access Object (objet spécialisé dans l'accès aux données)
@@ -12,6 +14,6 @@ import fr.afcepf.al32.entity.Personne;
  * D: Delete
  */
 
-public interface IPersonneDao extends IGenericDao<Personne>{
-	//...
+public interface ICompteDao extends IGenericDao<Compte>{
+	public List<Compte> comptesDuClient(Long numClient);
 }
