@@ -21,4 +21,12 @@ public class Client extends Personne{
 	@OneToMany(mappedBy="client",fetch=FetchType.LAZY)//mappedBy = nom "java" de la relation inverse 
 	private List<Compte> comptes;
 
+	@Override
+	public String toString() {
+		return "Client [password=" + password + ", toString()=" + super.toString() + "]";
+	}
+
+	
+
+	
 }

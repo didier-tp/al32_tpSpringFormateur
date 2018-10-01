@@ -111,3 +111,20 @@
 2018-10-01 15:25:54 - 	Compte(numero=1, client=Personne(numero=3, prenom=jean, nom=Bon, email=jb@gmail.com), label=compte 1, solde=50.0)
 2018-10-01 15:25:54 - 	Compte(numero=2, client=Personne(numero=3, prenom=jean, nom=Bon, email=jb@gmail.com), label=compte 2, solde=70.0)
 2018-10-01 15:25:54 - p=Personne(numero=2, prenom=alain, nom=Therieur, email=at@gmail.com)
+2018-10-01 15:33:31 - constructeur de ServicePersonneImpl appelé avant injections  avec personneDao=null
+2018-10-01 15:33:31 - initBean() appelée après injection avec @PostConstruct  avec personneDao=fr.afcepf.al32.dao.PersonneDaoJpa@6c9320c2
+2018-10-01 15:33:31 - p=Personne(numero=2, prenom=alain, nom=Therieur, email=at@gmail.com)
+2018-10-01 15:35:22 - constructeur de ServicePersonneImpl appelé avant injections  avec personneDao=null
+2018-10-01 15:35:22 - initBean() appelée après injection avec @PostConstruct  avec personneDao=fr.afcepf.al32.dao.PersonneDaoJpa@6c9320c2
+2018-10-01 15:35:22 - cli=Client [password=pwd, toString()=Personne(numero=3, prenom=jean, nom=Bon, email=jb@gmail.com)]
+2018-10-01 15:35:22 - 	Compte [numero=1, label=compte 1, solde=50.0]
+2018-10-01 15:35:22 - 	Compte [numero=2, label=compte 2, solde=70.0]
+2018-10-01 15:35:22 - p=Personne(numero=2, prenom=alain, nom=Therieur, email=at@gmail.com)
+2018-10-01 15:35:55 - constructeur de ServicePersonneImpl appelé avant injections  avec personneDao=null
+2018-10-01 15:35:55 - initBean() appelée après injection avec @PostConstruct  avec personneDao=fr.afcepf.al32.dao.PersonneDaoJpa@6c9320c2
+2018-10-01 15:35:56 - *** c=Compte [numero=1, label=compte 1, solde=50.0]
+2018-10-01 15:35:56 - *** c=Compte [numero=2, label=compte 2, solde=70.0]
+2018-10-01 15:35:56 - c=Compte [numero=2, label=compte 2, solde=70.0]
+2018-10-01 15:35:56 - client-c:Client [password=pwd, toString()=Personne(numero=3, prenom=jean, nom=Bon, email=jb@gmail.com)]
+2018-10-01 15:35:56 - pk=3
+2018-10-01 15:35:56 - compteRelu=Compte [numero=3, label=label xyz, solde=400.0]

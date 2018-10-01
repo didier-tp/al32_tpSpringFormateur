@@ -17,14 +17,14 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-@Getter @Setter @ToString @NoArgsConstructor
+@Getter @Setter  @NoArgsConstructor
 @Entity
 @Table(name="compte")
 @NamedQueries({
 	@NamedQuery(name="Compte.findAll", query="SELECT c FROM Compte c"),
 	@NamedQuery(name="Compte.findByClient", query="SELECT c FROM Compte c")
 })
-public class Compte {
+public class Compte { 
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)//IDENTITY ok avec mysql recent
@@ -46,6 +46,13 @@ public class Compte {
 		this.label = label;
 		this.solde = solde;
 	}
+
+	@Override
+	public String toString() {
+		return "Compte [numero=" + numero + ", label=" + label + ", solde=" + solde + "]";
+	}
+
+	
 	
 	
 
