@@ -41,5 +41,32 @@ public class TestServiceCompte {
 		}
 	}
 	
+	@Test 
+	public void testCrudCompte() {
+		//création nouveau compte
+		Compte nouveauCompte = new Compte(null,"compte xy",300.0);
+		serviceCompte.saveOrUpdateCompte(nouveauCompte);
+		Long pk = nouveauCompte.getNumero(); 
+		Assert.assertNotNull(pk);
+		logger.debug("pk="+pk);
+		//recherche pour vérifier
+		Compte compteRelu =serviceCompte.rechercherCompteParNumero(pk);
+		Assert.assertTrue(compteRelu.getLabel().equals("compte xy"));
+		//mise à jour 
+		compteRelu.setSolde(400.0);
+		compteRelu.setLabel("label xyz");
+		serviceCompte.saveOrUpdateCompte(compteRelu);
+		//vérification
+		compteRelu =serviceCompte.rechercherCompteParNumero(pk);
+		Assert.assertTrue(compteRelu.getLabel().equals("label xyz"));
+		Assert.assertEquals(400.0, compteRelu.getSolde(),0.0001);
+		logger.debug("compteRelu="+compteRelu.toString());
+		//suppression:
+		serviceCompte.supprimerCompte(pk);
+		//verification:
+		compteRelu =serviceCompte.rechercherCompteParNumero(pk);
+		Assert.assertNull(compteRelu);
+	}
+	
 
 }

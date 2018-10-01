@@ -26,4 +26,26 @@ public class ServiceCompteImpl implements IServiceCompte {
 		return dao.findAll();
 	}
 
+	@Override
+	public List<Compte> rechercherComptesDuClient(long numClient) {
+		return dao.comptesDuClient(numClient);
+	}
+
+	@Override
+	public Compte saveOrUpdateCompte(Compte cpt) {
+		 dao.save(cpt);
+		 return cpt;
+	}
+
+	@Override
+	public void supprimerCompte(long numero) {
+		dao.delete(numero);
+	}
+
+	@Override
+	public void transferer(double montant, long numCptDeb, long numCptCred) {
+		// plus tard
+		
+	}
+
 }

@@ -51,3 +51,22 @@
 2018-10-01 11:43:11 - *** c=Compte(numero=1, label=compte 1, solde=50.0)
 2018-10-01 11:43:11 - *** c=Compte(numero=2, label=compte 2, solde=70.0)
 2018-10-01 11:43:11 - c=Compte(numero=2, label=compte 2, solde=70.0)
+2018-10-01 11:48:59 - constructeur de ServicePersonneImpl appelé avant injections  avec personneDao=null
+2018-10-01 11:48:59 - initBean() appelée après injection avec @PostConstruct  avec personneDao=fr.afcepf.al32.dao.PersonneDaoJpa@a518813
+2018-10-01 11:48:59 - *** c=Compte(numero=1, label=compte 1, solde=50.0)
+2018-10-01 11:48:59 - *** c=Compte(numero=2, label=compte 2, solde=70.0)
+2018-10-01 11:48:59 - c=Compte(numero=2, label=compte 2, solde=70.0)
+2018-10-01 12:12:06 - constructeur de ServicePersonneImpl appelé avant injections  avec personneDao=null
+2018-10-01 12:12:06 - initBean() appelée après injection avec @PostConstruct  avec personneDao=fr.afcepf.al32.dao.PersonneDaoJpa@43d38654
+2018-10-01 12:12:06 - *** c=Compte(numero=1, label=compte 1, solde=50.0)
+2018-10-01 12:12:06 - *** c=Compte(numero=2, label=compte 2, solde=70.0)
+2018-10-01 12:12:06 - c=Compte(numero=2, label=compte 2, solde=70.0)
+2018-10-01 12:12:06 - pk=3
+2018-10-01 12:12:06 - compteRelu=Compte(numero=3, label=label xyz, solde=400.0)
+2018-10-01 12:12:29 - constructeur de ServicePersonneImpl appelé avant injections  avec personneDao=null
+2018-10-01 12:12:29 - initBean() appelée après injection avec @PostConstruct  avec personneDao=fr.afcepf.al32.dao.PersonneDaoJpa@43d38654
+2018-10-01 12:12:29 - *** c=Compte(numero=1, label=compte 1, solde=50.0)
+2018-10-01 12:12:29 - *** c=Compte(numero=2, label=compte 2, solde=70.0)
+2018-10-01 12:12:29 - c=Compte(numero=2, label=compte 2, solde=70.0)
+2018-10-01 12:12:29 - pk=3
+2018-10-01 12:12:29 - compteRelu=Compte(numero=3, label=label xyz, solde=400.0)
