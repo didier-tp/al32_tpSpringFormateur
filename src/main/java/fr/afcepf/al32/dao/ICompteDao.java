@@ -16,4 +16,5 @@ import fr.afcepf.al32.entity.Compte;
 
 public interface ICompteDao extends IGenericDao<Compte>{
 	public List<Compte> comptesDuClient(Long numClient);
+	public Compte compteAvecOptions(Long numCompte);
 }

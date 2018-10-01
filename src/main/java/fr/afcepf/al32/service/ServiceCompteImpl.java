@@ -48,4 +48,9 @@ public class ServiceCompteImpl implements IServiceCompte {
 		
 	}
 
+	@Override
+	public Compte rechercherCompteAvecOptions(Long num) {
+		return dao.compteAvecOptions(num);
+	}
+
 }

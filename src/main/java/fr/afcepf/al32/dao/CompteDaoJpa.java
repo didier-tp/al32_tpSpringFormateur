@@ -52,4 +52,13 @@ public class CompteDaoJpa implements ICompteDao {
 		return null;
 	}
 
+	@Override
+	public Compte compteAvecOptions(Long numCompte) {
+		String jpaRequest="SELECT cpt FROM Compte cpt INNER JOIN FETCH cpt.options "
+				        + " WHERE cpt.numero = :numCompte";
+		return entityManager.createQuery(jpaRequest,Compte.class)
+				            .setParameter("numCompte",numCompte)
+				            .getSingleResult();
+	}
+
 }

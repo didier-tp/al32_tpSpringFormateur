@@ -13,6 +13,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import fr.afcepf.al32.config.ServiceConfig;
 import fr.afcepf.al32.entity.Compte;
+import fr.afcepf.al32.entity.Option;
 import fr.afcepf.al32.service.IServiceCompte;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -25,6 +26,17 @@ public class TestServiceCompte {
 	@Autowired
 	private IServiceCompte serviceCompte; //à tester
 	
+	
+	@Test
+	public void testCompteAvecOptions() {
+		Compte c1 =serviceCompte.rechercherCompteAvecOptions(1L);
+		Assert.assertTrue(c1.getNumero()==1L);
+		logger.debug("c1="+c1.toString());
+        for(Option o : c1.getOptions()) {
+        	logger.debug("\t" + o.toString());
+        }
+
+	}
 	
 	@Test
 	public void testRechercheParNum() {

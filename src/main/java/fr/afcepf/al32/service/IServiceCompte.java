@@ -7,6 +7,7 @@ import fr.afcepf.al32.entity.Compte;
 public interface IServiceCompte {
    
    Compte rechercherCompteParNumero(Long num);
+   Compte rechercherCompteAvecOptions(Long num);
    List<Compte> rechercherTousLesComptes();
    List<Compte> rechercherComptesDuClient(long numClient);
    

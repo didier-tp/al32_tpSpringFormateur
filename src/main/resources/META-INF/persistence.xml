@@ -10,6 +10,7 @@
 		<class>fr.afcepf.al32.entity.Personne</class>
 		<class>fr.afcepf.al32.entity.Compte</class>
 		<class>fr.afcepf.al32.entity.Client</class>
+		<class>fr.afcepf.al32.entity.Option</class>
 		<properties>
 			<property name="hibernate.dialect"
 				value="org.hibernate.dialect.MySQL5InnoDBDialect" />
