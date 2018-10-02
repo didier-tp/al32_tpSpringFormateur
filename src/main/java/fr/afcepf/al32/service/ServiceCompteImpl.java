@@ -10,11 +10,25 @@ import fr.afcepf.al32.dao.ICompteDao;
 import fr.afcepf.al32.entity.Compte;
 
 @Service
-@Transactional
+//@Transactional
 public class ServiceCompteImpl implements IServiceCompte {
 
 	@Autowired
 	private ICompteDao dao;
+	
+	@Override
+	//@Transactional
+	//s.transferer(50.0 , 1L , 2L);--> commit automatique
+	//s.transferer(50.0 , 1L , -2L);--> exception et rollback
+	public void transferer(double montant, long numCptDeb, long numCptCred) {
+		Compte cptDeb = dao.findOne(numCptDeb);
+		cptDeb.setSolde(cptDeb.getSolde()-montant);
+		dao.save(cptDeb);//NB: l'appel à dao.save() sera facultatif si 
+		                 //contexte @Transactional et état persistant
+		Compte cptCred = dao.findOne(numCptCred);
+		cptCred.setSolde(cptCred.getSolde()+montant);
+		dao.save(cptCred);
+	}
 
 	@Override
 	public Compte rechercherCompteParNumero(Long num) {
@@ -42,11 +56,7 @@ public class ServiceCompteImpl implements IServiceCompte {
 		dao.delete(numero);
 	}
 
-	@Override
-	public void transferer(double montant, long numCptDeb, long numCptCred) {
-		// plus tard
-		
-	}
+	
 
 	@Override
 	public Compte rechercherCompteAvecOptions(Long num) {
