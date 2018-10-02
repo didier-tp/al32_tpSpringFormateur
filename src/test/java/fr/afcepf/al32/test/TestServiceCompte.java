@@ -28,6 +28,19 @@ public class TestServiceCompte {
 	
 	
 	@Test
+	public void testBonVirement() {
+		double s1Avant = serviceCompte.rechercherCompteParNumero(1L).getSolde();
+		double s2Avant = serviceCompte.rechercherCompteParNumero(2L).getSolde();
+		serviceCompte.transferer(50.0, 1L, 2L);
+		double s1Apres = serviceCompte.rechercherCompteParNumero(1L).getSolde();
+		double s2Apres = serviceCompte.rechercherCompteParNumero(2L).getSolde();
+		Assert.assertEquals(s1Avant-50.0, s1Apres , 0.00001);
+		Assert.assertEquals(s2Avant+50.0, s2Apres , 0.00001);
+		logger.debug("s1Avant="+s1Avant + " s2Avant=" + s2Avant);
+		logger.debug("s1Apres="+s1Apres + " s2Apres=" + s2Apres);
+	}
+	
+	@Test
 	public void testCompteAvecOptions() {
 		Compte c1 =serviceCompte.rechercherCompteAvecOptions(1L);
 		Assert.assertTrue(c1.getNumero()==1L);
