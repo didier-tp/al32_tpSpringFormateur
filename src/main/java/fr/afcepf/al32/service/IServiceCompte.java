@@ -14,5 +14,7 @@ public interface IServiceCompte {
    Compte saveOrUpdateCompte(Compte cpt);
    void supprimerCompte(long numero);
    
-   void transferer(double montant,long numCptDeb,long numCptCred);//virement
+   void transferer(double montant,
+		           long numCptDeb,
+		           long numCptCred) throws MyServiceException;//virement
 }

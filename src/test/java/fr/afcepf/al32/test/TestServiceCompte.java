@@ -15,6 +15,7 @@ import fr.afcepf.al32.config.ServiceConfig;
 import fr.afcepf.al32.entity.Compte;
 import fr.afcepf.al32.entity.Option;
 import fr.afcepf.al32.service.IServiceCompte;
+import fr.afcepf.al32.service.MyServiceException;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 //@ContextConfiguration(locations= {"/springConfAnnot.xml"})
@@ -31,7 +32,11 @@ public class TestServiceCompte {
 	public void testBonVirement() {
 		double s1Avant = serviceCompte.rechercherCompteParNumero(1L).getSolde();
 		double s2Avant = serviceCompte.rechercherCompteParNumero(2L).getSolde();
-		serviceCompte.transferer(50.0, 1L, 2L);
+		try {
+			serviceCompte.transferer(50.0, 1L, 2L);
+		} catch (MyServiceException e) {
+			e.printStackTrace();
+		}
 		double s1Apres = serviceCompte.rechercherCompteParNumero(1L).getSolde();
 		double s2Apres = serviceCompte.rechercherCompteParNumero(2L).getSolde();
 		Assert.assertEquals(s1Avant-50.0, s1Apres , 0.00001);
