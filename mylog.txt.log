@@ -4,3 +4,24 @@
 2018-10-02 09:10:01 - 	Compte [numero=1, label=compte 1, solde=50.0]
 2018-10-02 09:10:01 - 	Compte [numero=2, label=compte 2, solde=70.0]
 2018-10-02 09:10:01 - p=Personne(numero=2, prenom=alain, nom=Therieur, email=at@gmail.com)
+2018-10-02 09:56:44 - constructeur de ServicePersonneImpl appelé avant injections  avec personneDao=null
+2018-10-02 09:56:44 - initBean() appelée après injection avec @PostConstruct  avec personneDao=fr.afcepf.al32.dao.PersonneDaoJpa@20cece0b
+2018-10-02 09:56:44 - s1Avant=50.0 s2Avant=70.0
+2018-10-02 09:56:44 - s1Apres=0.0 s2Apres=120.0
+2018-10-02 09:57:50 - constructeur de ServicePersonneImpl appelé avant injections  avec personneDao=null
+2018-10-02 09:57:50 - initBean() appelée après injection avec @PostConstruct  avec personneDao=fr.afcepf.al32.dao.PersonneDaoJpa@5f038248
+2018-10-02 09:57:50 - s1Avant=50.0 s2Avant=70.0
+2018-10-02 09:57:50 - s1Apres=0.0 s2Apres=120.0
+2018-10-02 10:05:06 - constructeur de ServicePersonneImpl appelé avant injections  avec personneDao=null
+2018-10-02 10:05:06 - initBean() appelée après injection avec @PostConstruct  avec personneDao=fr.afcepf.al32.dao.PersonneDaoJpa@78e22d35
+2018-10-02 10:05:06 - exception normale si echec virementnull
+2018-10-02 10:06:21 - constructeur de ServicePersonneImpl appelé avant injections  avec personneDao=null
+2018-10-02 10:06:21 - initBean() appelée après injection avec @PostConstruct  avec personneDao=fr.afcepf.al32.dao.PersonneDaoJpa@78e22d35
+2018-10-02 10:06:21 - exception normale si echec virementnull
+2018-10-02 10:06:21 - mauvais virement , s1Avant=50.0 s2Avant=70.0
+2018-10-02 10:06:21 - mauvais virement , s1Apres=0.0 s2Apres=70.0
+2018-10-02 10:07:14 - constructeur de ServicePersonneImpl appelé avant injections  avec personneDao=null
+2018-10-02 10:07:14 - initBean() appelée après injection avec @PostConstruct  avec personneDao=fr.afcepf.al32.dao.PersonneDaoJpa@59f93db8
+2018-10-02 10:07:14 - exception normale si echec virementnull
+2018-10-02 10:07:14 - mauvais virement , s1Avant=50.0 s2Avant=70.0
+2018-10-02 10:07:14 - mauvais virement , s1Apres=50.0 s2Apres=70.0

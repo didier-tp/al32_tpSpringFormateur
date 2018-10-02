@@ -17,7 +17,7 @@ public class ServiceCompteImpl implements IServiceCompte {
 	private ICompteDao dao;
 	
 	@Override
-	//@Transactional
+	@Transactional
 	//s.transferer(50.0 , 1L , 2L);--> commit automatique
 	//s.transferer(50.0 , 1L , -2L);--> exception et rollback
 	public void transferer(double montant, long numCptDeb, long numCptCred) {

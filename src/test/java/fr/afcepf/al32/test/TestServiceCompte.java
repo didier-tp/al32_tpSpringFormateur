@@ -41,6 +41,24 @@ public class TestServiceCompte {
 	}
 	
 	@Test
+	public void testMauvaisVirement() {
+		double s1Avant = serviceCompte.rechercherCompteParNumero(1L).getSolde();
+		double s2Avant = serviceCompte.rechercherCompteParNumero(2L).getSolde();
+		try {
+			serviceCompte.transferer(50.0, 1L, -2L);//-2L n'existe pas !!!
+			Assert.fail("exception non remontée = bug");
+		} catch (Exception e) {
+			logger.debug("exception normale si echec virement" + e.getMessage());
+		}
+		double s1Apres = serviceCompte.rechercherCompteParNumero(1L).getSolde();
+		double s2Apres = serviceCompte.rechercherCompteParNumero(2L).getSolde();
+		logger.debug("mauvais virement , s1Avant="+s1Avant + " s2Avant=" + s2Avant);
+		logger.debug("mauvais virement , s1Apres="+s1Apres + " s2Apres=" + s2Apres);
+		Assert.assertEquals(s1Avant, s1Apres , 0.00001);
+		Assert.assertEquals(s2Avant, s2Apres , 0.00001);
+	}
+	
+	@Test
 	public void testCompteAvecOptions() {
 		Compte c1 =serviceCompte.rechercherCompteAvecOptions(1L);
 		Assert.assertTrue(c1.getNumero()==1L);
