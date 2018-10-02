@@ -34,7 +34,7 @@ public class TestServiceCompte {
 		double s2Avant = serviceCompte.rechercherCompteParNumero(2L).getSolde();
 		try {
 			serviceCompte.transferer(50.0, 1L, 2L);
-		} catch (MyServiceException e) {
+		} catch (MyServiceException e) { 
 			e.printStackTrace();
 		}
 		double s1Apres = serviceCompte.rechercherCompteParNumero(1L).getSolde();
@@ -87,6 +87,14 @@ public class TestServiceCompte {
 		List<Compte> listeCpt = serviceCompte.rechercherTousLesComptes();
 		for(Compte c : listeCpt) {
 			logger.debug("*** c="+c.toString());
+		}
+	}
+	
+	@Test
+	public void testRechercherComptesDuClient() {
+		List<Compte> listeCpt = serviceCompte.rechercherComptesDuClient(3L);
+		for(Compte c : listeCpt) {
+			logger.debug("### c="+c.toString());
 		}
 	}
 	

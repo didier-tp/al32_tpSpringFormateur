@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import fr.afcepf.al32.entity.Compte;
 @Component
 @Transactional //idealement en version Spring
-public class CompteDaoJpa implements ICompteDao {
+public class CompteDaoJpa implements ICompteDao { 
 
 	@PersistenceContext
 	private EntityManager entityManager;
@@ -39,7 +39,7 @@ public class CompteDaoJpa implements ICompteDao {
 	@Override
 	public List<Compte> findAll() {
 		//return entityManager.createQuery("SELECT c FROM Compte c", Compte.class)
-		//		            .getResultList();
+		//		            .getResultList(); 
 		return entityManager.createNamedQuery("Compte.findAll", Compte.class)
 				            .getResultList();
 		//avec @NamedQuery(name="Compte.findAll", query="SELECT c FROM Compte c")
@@ -48,8 +48,9 @@ public class CompteDaoJpa implements ICompteDao {
 
 	@Override
 	public List<Compte> comptesDuClient(Long numClient) {
-		// TODO Auto-generated method stub
-		return null;
+		return entityManager.createNamedQuery("Compte.findByClient", Compte.class)
+				.setParameter("numClient", numClient)
+	            .getResultList();
 	}
 
 	@Override

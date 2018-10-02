@@ -22,6 +22,11 @@ public class ServiceCompteImpl implements IServiceCompte {
 	private ICompteDao dao;
 	
 	@Override
+	public List<Compte> rechercherComptesDuClient(long numClient) {
+		return dao.comptesDuClient(numClient);
+	}
+	
+	@Override
 	//@Transactional ici ou au dessus de la classe entière
 	//s.transferer(50.0 , 1L , 2L);--> commit automatique
 	//s.transferer(50.0 , 1L , -2L);--> exception et rollback
@@ -52,10 +57,7 @@ public class ServiceCompteImpl implements IServiceCompte {
 		return dao.findAll();
 	}
 
-	@Override
-	public List<Compte> rechercherComptesDuClient(long numClient) {
-		return dao.comptesDuClient(numClient);
-	}
+	
 
 	@Override
 	public Compte saveOrUpdateCompte(Compte cpt) {
